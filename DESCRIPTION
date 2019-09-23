@@ -1,0 +1,12 @@
+Package: SerbianCyrLat
+Type: Package
+Title: Serbian Latin/Cyrillic converter
+Version: 0.1.0
+Authors@R: person("Milos", "Basaraba", email = "milos.basaraba@gmail.com",
+  role = c("aut", "cre"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
