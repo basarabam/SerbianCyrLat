@@ -19,7 +19,8 @@ Converts Serbian Latin strings to Serbian Cyrillic strings
 text <- "Čačkanje Ljuljaškice Ćuteći Žestoko Đuradj"
 lat_cir(text)
 
-df_text <- data.frame(num = 1:5, text = c("Čačkanje", "Ljuljaškice", "Ćuteći", "Žestoko", "Đuradj"),
+df_text <- data.frame(num = 1:5, text = c("Čačkanje", "Ljuljaškice",
+"Ćuteći", "Žestoko", "Đuradj"),
 stringsAsFactors = FALSE)
 lat_cir(df_text)
 }

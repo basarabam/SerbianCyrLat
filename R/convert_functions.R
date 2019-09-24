@@ -15,8 +15,9 @@
 
 #' Function for replacing latin to cirilic characters from string
 #' Function for replacing latin to cirilic characters from string
-Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
-test_lat_cir <- function(df){
+#sSys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
+myenv <- new.env()
+myenv$test_lat_cir <- function(df){
   Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
   df <- enc2utf8(df)
   for(j in 1:nrow(df_cir_lat)){
@@ -24,6 +25,16 @@ test_lat_cir <- function(df){
   }
   df
 }
+# Function to replace Serbian Cyrillic characters to Serbian Latin characters
+myenv$test_cir_lat <- function(df){
+  Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
+  df <- enc2utf8(df)
+  for(j in 1:nrow(df_cir_lat)){
+    df <- str_replace_all(df, df_cir_lat$Cir[j], df_cir_lat$Lat[j])
+  }
+  df
+}
+
 
 #' Converts Serbian Latin strings to Serbian Cyrillic strings
 #'
@@ -33,7 +44,8 @@ test_lat_cir <- function(df){
 #' text <- "Čačkanje Ljuljaškice Ćuteći Žestoko Đuradj"
 #' lat_cir(text)
 #'
-#' df_text <- data.frame(num = 1:5, text = c("Čačkanje", "Ljuljaškice", "Ćuteći", "Žestoko", "Đuradj"),
+#' df_text <- data.frame(num = 1:5, text = c("Čačkanje", "Ljuljaškice",
+#' "Ćuteći", "Žestoko", "Đuradj"),
 #' stringsAsFactors = FALSE)
 #' lat_cir(df_text)
 lat_cir <- function(df) {
@@ -44,12 +56,12 @@ lat_cir <- function(df) {
   }
 
   if(typeof(df) == "character" & is.null(ncol(df))){
-    df <- test_lat_cir(df)
+    df <- myenv$test_lat_cir(df)
   } else {
     num_col <- ncol(df)
     for (i in 1:ncol(df)){
       if(typeof(df[[i]]) == "character"){
-        df[[i]] <- test_lat_cir(df[[i]])
+        df[[i]] <- myenv$test_lat_cir(df[[i]])
         #df[[i]] <- sapply(df[[i]], test_lat_cir)
         }
       }
@@ -58,5 +70,38 @@ lat_cir <- function(df) {
   df
   }
 
+#' Converts Serbian Cyrillic strings to Serbian Latin strings
+#'
+#' @param df can be a data frame, tibble or character string
+#' @return data frame, tibble or character string converted to Serbian Latin characters
+#' @examples
+#' text <- "Чачкање Љуљашкице Ћутећи Жестоко Ђурађ"
+#' cyr_lat(text)
+#'
+#' df_text <- data.frame(num = 1:5, text = c("Чачкање", "Љуљашкице",
+#' "Ћутећи", "Жестоко", "Ђурађ"),
+#' stringsAsFactors = FALSE)
+#' cyr_lat(df_text)
+cyr_lat <- function(df) {
+  Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
+  df_cir_lat <- data.frame(df_cir_lat)
+  if(typeof(df) == "double" | typeof(df) == "logical"){
+    stop("Argument not coerciable to character vector! Please set argument to character or data frame!")
+  }
+
+  if(typeof(df) == "character" & is.null(ncol(df))){
+    df <- myenv$test_cir_lat(df)
+  } else {
+    num_col <- ncol(df)
+    for (i in 1:ncol(df)){
+      if(typeof(df[[i]]) == "character"){
+        df[[i]] <- myenv$test_cir_lat(df[[i]])
+        #df[[i]] <- sapply(df[[i]], test_cir_lat)
+      }
+    }
+  }
+  Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
+  df
+}
 
 
