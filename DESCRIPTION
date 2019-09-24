@@ -1,12 +1,18 @@
 Package: SerbianCyrLat
 Type: Package
-Title: Serbian Latin/Cyrillic converter
+Title: Serbian Latin to Cyrillic Converter
 Version: 0.1.0
-Authors@R: person("Milos", "Basaraba", email = "milos.basaraba@gmail.com",
+Authors@R: person("Milos", "Basaraba", email = "milos.basaraba@gmail.com", 
   role = c("aut", "cre"))
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+URL: https://github.com/basarabam/SerbianCyrLat/
+BugReports: https://github.com/basarabam/SerbianCyrLat/issues
+Description: The package converts Serbian latin characters to Serbian 
+  Cyrillic characters and vice versa. It is possible to choose type 
+  of conversion as to choose to clone character changes in new variable 
+  or to change charactersin place. It is possible to convert strings in 
+  character variables and dataframes.
+Imports: 
+  tidyverse
+License: GPL-2 | file LICENSE
 Encoding: UTF-8
 LazyData: true
