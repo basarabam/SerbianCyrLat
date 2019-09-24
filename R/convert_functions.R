@@ -24,7 +24,8 @@ test_lat_cir <- function(df){
   df
 }
 
-
+#' Function to convert input object (character or df with character columns)
+#'
 lat_cir <- function(df) {
   Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
   df_cir_lat <- data.frame(df_cir_lat)
