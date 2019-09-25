@@ -28,6 +28,8 @@ myenv$test_cir_lat <- function(df){
 #' @param df can be a data frame, tibble or character string
 #' @return data frame, tibble or character string converted to Serbian Cyrillic characters
 #'
+#' @rdname lat_cyr
+#' @export lat_cyr
 
 lat_cyr <- function(df) {
   Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
@@ -62,7 +64,8 @@ lat_cyr <- function(df) {
 #'
 #' @param df can be a data frame, tibble or character string
 #' @return data frame, tibble or character string converted to Serbian Latin characters
-
+#' @rdname cyr_lat
+#' @export cyr_lat
 cyr_lat <- function(df) {
   Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
   df_cir_lat <- data.frame(df_cir_lat)
