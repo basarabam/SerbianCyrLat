@@ -21,9 +21,9 @@ myenv$test_cir_lat <- function(df){
 
 #' Serbian Latin to Serbian Ciryllic transliterator
 #'
-#' Converting Serbian Latin characters to Serbian Cyrillic caracters.
+#' Converting Serbian Latin characters to Serbian Cyrillic characters.
 #' The function, changes locale settings of R session to Serbian Cyrillic
-#' for easier mannipulation with Serbian Cyrillic character sets.
+#' for easier manipulation with Serbian Cyrillic character sets.
 #' When this function converts data frame or tibble function does not
 #' change the characters of column names. In the future it is planed to
 #' add this option.
@@ -68,9 +68,9 @@ lat_cyr <- function(df) {
 
 #' Serbian Cyrillic to Serbian Latin transliterator
 #'
-#' Converting Serbian Cyrillic characters to Serbian Latin caracters.
+#' Converting Serbian Cyrillic characters to Serbian Latin characters.
 #' The function, changes locale settings of R session to Serbian Latin
-#' for easier mannipulation with Serbian Latin character sets.
+#' for easier manipulation with Serbian Latin character sets.
 #' When this function converts data frame or tibble function does not
 #' change the characters of column names. In the future it is planed to
 #' add this option.

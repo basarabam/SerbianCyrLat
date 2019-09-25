@@ -13,9 +13,9 @@ lat_cyr(df)
 data frame, tibble or character string converted to Serbian Cyrillic characters.
 }
 \description{
-Converting Serbian Latin characters to Serbian Cyrillic caracters.
+Converting Serbian Latin characters to Serbian Cyrillic characters.
 The function, changes locale settings of R session to Serbian Cyrillic
-for easier mannipulation with Serbian Cyrillic character sets.
+for easier manipulation with Serbian Cyrillic character sets.
 When this function converts data frame or tibble function does not
 change the characters of column names. In the future it is planed to
 add this option.
