@@ -60,7 +60,7 @@ lat_cyr <- function(df) {
       }
     }
   Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
-  print("Info - locale settings changed:")
+  warning("Locale settings changed!")
   print(Sys.getlocale())
   df
   }
