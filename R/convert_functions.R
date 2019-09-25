@@ -26,8 +26,15 @@ myenv$test_cir_lat <- function(df){
 #' for easier mannipulation with Serbian Cyrillic character sets.
 #'
 #' @param df can be a data frame, tibble or character string
-#' @return data frame, tibble or character string converted to Serbian Cyrillic characters
+#' @return data frame, tibble or character string converted to Serbian Cyrillic characters.
+#' @examples
+#' \dontrun{
+#' lat_cyr(c("Č", "ž", "đ", "lj", "ć", "dž"))
 #'
+#' df_text <- data.frame(num = 1:6, c("Č", "ž", "đ", "lj", "ć", "dž"),
+#' stringsAsFactors = FALSE)
+#' lat_cyr(df_text)
+#' }
 #' @rdname lat_cyr
 #' @export lat_cyr
 
@@ -64,6 +71,14 @@ lat_cyr <- function(df) {
 #'
 #' @param df can be a data frame, tibble or character string
 #' @return data frame, tibble or character string converted to Serbian Latin characters
+#' @examples
+#' \dontrun{
+#' cyr_lat(c("Ч", "љ", "ђ", "ж", "ћ", "њ"))
+#'
+#' df_text <- data.frame(num = 1:6, c("Ч", "љ", "ђ", "ж", "ћ", "њ"),
+#' stringsAsFactors = FALSE)
+#' cyr_lat(df_text)
+#' }
 #' @rdname cyr_lat
 #' @export cyr_lat
 cyr_lat <- function(df) {
@@ -85,7 +100,7 @@ cyr_lat <- function(df) {
     }
   }
   Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
-  print("Info - locale settings changed:")
+  warning("Locale settings changed!")
   print(Sys.getlocale())
   df
 }

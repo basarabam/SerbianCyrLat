@@ -14,7 +14,8 @@ Description: The package converts Serbian latin characters to Serbian
 Imports: 
   stringr
 Suggests:
-  tidyverse
+    tidyverse,
+    testthat (>= 2.1.0)
 License: GPL-2
 Depends: R (>= 2.10)
 Encoding: UTF-8

@@ -17,3 +17,12 @@ Converting Serbian Cyrillic characters to Serbian Latin caracters.
 The function, changes locale settings of R session to Serbian Latin
 for easier mannipulation with Serbian Latin character sets.
 }
+\examples{
+\dontrun{
+cyr_lat(c("Ð§", "Ñ™", "Ñ’", "Ð¶", "Ñ›", "Ñš"))
+
+df_text <- data.frame(num = 1:6, c("Ð§", "Ñ™", "Ñ’", "Ð¶", "Ñ›", "Ñš"),
+stringsAsFactors = FALSE)
+cyr_lat(df_text)
+}
+}

@@ -10,10 +10,19 @@ lat_cyr(df)
 \item{df}{can be a data frame, tibble or character string}
 }
 \value{
-data frame, tibble or character string converted to Serbian Cyrillic characters
+data frame, tibble or character string converted to Serbian Cyrillic characters.
 }
 \description{
 Converting Serbian Latin characters to Serbian Cyrillic caracters.
 The function, changes locale settings of R session to Serbian Cyrillic
 for easier mannipulation with Serbian Cyrillic character sets.
+}
+\examples{
+\dontrun{
+lat_cyr(c("ÄŒ", "Å¾", "Ä‘", "lj", "Ä‡", "dÅ¾"))
+
+df_text <- data.frame(num = 1:6, c("ÄŒ", "Å¾", "Ä‘", "lj", "Ä‡", "dÅ¾"),
+stringsAsFactors = FALSE)
+lat_cyr(df_text)
+}
 }
