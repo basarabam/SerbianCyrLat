@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert_functions.R
 \name{cyr_lat}
 \alias{cyr_lat}
-\title{Converts Serbian Cyrillic strings to Serbian Latin strings}
+\title{Serbian Cyrillic to Serbian Latin transliterator}
 \usage{
 cyr_lat(df)
 }
@@ -13,14 +13,7 @@ cyr_lat(df)
 data frame, tibble or character string converted to Serbian Latin characters
 }
 \description{
-Converts Serbian Cyrillic strings to Serbian Latin strings
-}
-\examples{
-text <- "Чачкање Љуљашкице Ћутећи Жестоко Ђурађ"
-cyr_lat(text)
-
-df_text <- data.frame(num = 1:5, text = c("Чачкање", "Љуљашкице",
-"Ћутећи", "Жестоко", "Ђурађ"),
-stringsAsFactors = FALSE)
-cyr_lat(df_text)
+Converting Serbian Cyrillic characters to Serbian Latin caracters.
+The function, changes locale settings of R session to Serbian Latin
+for easier mannipulation with Serbian Latin character sets.
 }

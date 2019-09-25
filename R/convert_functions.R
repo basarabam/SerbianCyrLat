@@ -1,27 +1,10 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Ctrl + Shift + B'
-#   Check Package:             'Ctrl + Shift + E'
-#   Test Package:              'Ctrl + Shift + T'
 
-#' Function for replacing latin to cirilic characters from string
-#' Function for replacing latin to cirilic characters from string
-#sSys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
 myenv <- new.env()
 myenv$test_lat_cir <- function(df){
   Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
   df <- enc2utf8(df)
   for(j in 1:nrow(df_cir_lat)){
-    df <- str_replace_all(df, df_cir_lat$Lat[j], df_cir_lat$Cir[j])
+    df <- stringr::str_replace_all(df, df_cir_lat$Lat[j], df_cir_lat$Cir[j])
   }
   df
 }
@@ -30,25 +13,23 @@ myenv$test_cir_lat <- function(df){
   Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
   df <- enc2utf8(df)
   for(j in 1:nrow(df_cir_lat)){
-    df <- str_replace_all(df, df_cir_lat$Cir[j], df_cir_lat$Lat[j])
+    df <- stringr::str_replace_all(df, df_cir_lat$Cir[j], df_cir_lat$Lat[j])
   }
   df
 }
 
 
-#' Converts Serbian Latin strings to Serbian Cyrillic strings
+#' Serbian Latin to Serbian Ciryllic transliterator
+#'
+#' Converting Serbian Latin characters to Serbian Cyrillic caracters.
+#' The function, changes locale settings of R session to Serbian Cyrillic
+#' for easier mannipulation with Serbian Cyrillic character sets.
 #'
 #' @param df can be a data frame, tibble or character string
 #' @return data frame, tibble or character string converted to Serbian Cyrillic characters
-#' @examples
-#' text <- "Čačkanje Ljuljaškice Ćuteći Žestoko Đuradj"
-#' lat_cir(text)
 #'
-#' df_text <- data.frame(num = 1:5, text = c("Čačkanje", "Ljuljaškice",
-#' "Ćuteći", "Žestoko", "Đuradj"),
-#' stringsAsFactors = FALSE)
-#' lat_cir(df_text)
-lat_cir <- function(df) {
+
+lat_cyr <- function(df) {
   Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
   df_cir_lat <- data.frame(df_cir_lat)
   if(typeof(df) == "double" | typeof(df) == "logical"){
@@ -67,21 +48,21 @@ lat_cir <- function(df) {
       }
     }
   Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
+  print("Info - locale settings changed:")
+  print(Sys.getlocale())
   df
   }
 
-#' Converts Serbian Cyrillic strings to Serbian Latin strings
+
+#' Serbian Cyrillic to Serbian Latin transliterator
+#'
+#' Converting Serbian Cyrillic characters to Serbian Latin caracters.
+#' The function, changes locale settings of R session to Serbian Latin
+#' for easier mannipulation with Serbian Latin character sets.
 #'
 #' @param df can be a data frame, tibble or character string
 #' @return data frame, tibble or character string converted to Serbian Latin characters
-#' @examples
-#' text <- "Чачкање Љуљашкице Ћутећи Жестоко Ђурађ"
-#' cyr_lat(text)
-#'
-#' df_text <- data.frame(num = 1:5, text = c("Чачкање", "Љуљашкице",
-#' "Ћутећи", "Жестоко", "Ђурађ"),
-#' stringsAsFactors = FALSE)
-#' cyr_lat(df_text)
+
 cyr_lat <- function(df) {
   Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
   df_cir_lat <- data.frame(df_cir_lat)
@@ -101,7 +82,7 @@ cyr_lat <- function(df) {
     }
   }
   Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
+  print("Info - locale settings changed:")
+  print(Sys.getlocale())
   df
 }
-
-
