@@ -18,14 +18,34 @@ myenv$test_cir_lat <- function(df){
 }
 
 #' Serbian Latin to Serbian Ciryllic transliterator
-
+#'
+#' Converting Serbian Latin characters to Serbian Cyrillic characters.
+#' The function, changes locale settings of R session to Serbian Cyrillic
+#' for easier manipulation with Serbian Cyrillic character sets.
+#' When this function converts data frame or tibble function does not
+#' change the characters of column names. In the future it is planed to
+#' add this option.
+#'
+#' @param df can be a data frame, tibble or character string
+#' @return data frame, tibble or character string converted to Serbian Cyrillic characters.
+#' @examples
+#' \dontrun{
+#' locale(loc = "L") #Important!
+#' lat_cyr(c("Č", "ž", "đ", "lj", "ć", "dž"))
+#'
+#' locale(loc = "L") #Important!
+#' df_text <- data.frame(num = 1:6, c("Č", "ž", "đ", "lj", "ć", "dž"),
+#' stringsAsFactors = FALSE)
+#' lat_cyr(df_text)
+#' }
+#' @rdname lat_cyr
+#' @export lat_cyr
 lat_cyr <- function(df) {
   Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
   df_cir_lat <- data.frame(df_cir_lat)
   if(typeof(df) == "double" | typeof(df) == "logical"){
     stop("Argument not coerciable to character vector! Please set argument to character or data frame!")
   }
-
   if(typeof(df) == "character" & is.null(ncol(df))){
     df <- myenv$test_lat_cir(df)
   } else {
@@ -41,8 +61,31 @@ lat_cyr <- function(df) {
   warning("Locale settings changed!")
   print(Sys.getlocale())
   df
-  }
+}
+
 #' Serbian Cyrillic to Serbian Latin transliterator
+#'
+#' Converting Serbian Cyrillic characters to Serbian Latin characters.
+#' The function, changes locale settings of R session to Serbian Latin
+#' for easier manipulation with Serbian Latin character sets.
+#' When this function converts data frame or tibble function does not
+#' change the characters of column names. In the future it is planed to
+#' add this option.
+#'
+#' @param df can be a data frame, tibble or character string
+#' @return data frame, tibble or character string converted to Serbian Latin characters
+#' @examples
+#' \dontrun{
+#' locale(loc = "C") #Important!
+#' cyr_lat(c("Ч", "љ", "ђ", "ж", "ћ", "њ"))
+#'
+#' locale(loc = "C") #Important!
+#' df_text <- data.frame(num = 1:6, c("Ч", "љ", "ђ", "ж", "ћ", "њ"),
+#' stringsAsFactors = FALSE)
+#' cyr_lat(df_text)
+#' }
+#' @rdname cyr_lat
+#' @export cyr_lat
 
 cyr_lat <- function(df) {
   Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")

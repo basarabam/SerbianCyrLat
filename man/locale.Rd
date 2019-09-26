@@ -2,10 +2,44 @@
 % Please edit documentation in R/locale.R
 \name{locale}
 \alias{locale}
-\title{Set Aspects of the Locale for Transliteration}
+\title{Change Aspects of the Locale for the Transliteration}
 \usage{
 locale(loc)
 }
+\arguments{
+\item{loc}{string, can take one of three values:
+
+"L" - Change aspect of the locale to Serbian Latin.
+
+"C" - Change aspect of the locale to Serbian Cyrillic.
+
+"D" - Change aspect of the locale to system default.
+
+It is important to change the aspect of the locale to character
+before transliteration of the characters.
+So if trasliteration is done from the Serbian Latin to Serbian
+Cyrillic it is important to set locale to Serbian Latin,
+locale(loc = "L"). If not, strange behaviour of characters, may occur.
+If transliteration is done from the Serbian Cyrillic to Serbian
+Latin it is important to set loacale to Serbian Cyrillic,
+locale(loc="C").
+If locale not set, before entering, transliteration may not be
+done properly, and strange behaviour of characters may occur.}
+}
+\value{
+A character string of length one describing the locale in use
+}
 \description{
-Set Aspects of the Locale for Transliteration
+Change Aspects of the Locale for the Transliteration
+}
+\examples{
+\dontrun{
+locale(loc = "L") #Important!
+lat_cyr(c("ÄŒ", "Å¾", "Ä‘", "lj", "Ä‡", "dÅ¾"))
+
+locale(loc = "L") #Important!
+df_text <- data.frame(num = 1:6, c("ÄŒ", "Å¾", "Ä‘", "lj", "Ä‡", "dÅ¾"),
+stringsAsFactors = FALSE)
+lat_cyr(df_text)
+}
 }
