@@ -1,7 +1,7 @@
 
 myenv <- new.env()
 myenv$test_lat_cir <- function(df){
-  Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
+  #Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
   df <- enc2utf8(df)
   for(j in 1:nrow(df_cir_lat)){
     df <- stringr::str_replace_all(df, df_cir_lat$Lat[j], df_cir_lat$Cir[j])
@@ -10,7 +10,7 @@ myenv$test_lat_cir <- function(df){
 }
 # Function to replace Serbian Cyrillic characters to Serbian Latin characters
 myenv$test_cir_lat <- function(df){
-  Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
+  #Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
   df <- enc2utf8(df)
   for(j in 1:nrow(df_cir_lat)){
     df <- stringr::str_replace_all(df, df_cir_lat$Cir[j], df_cir_lat$Lat[j])
@@ -59,7 +59,7 @@ lat_cyr <- function(df) {
         }
       }
     }
-  Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
+  #Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
   warning("Locale settings changed!")
   print(Sys.getlocale())
   df
@@ -105,7 +105,7 @@ cyr_lat <- function(df) {
       }
     }
   }
-  Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
+  #Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
   warning("Locale settings changed!")
   print(Sys.getlocale())
   df
