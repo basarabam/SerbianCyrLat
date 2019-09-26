@@ -2,15 +2,10 @@
 % Please edit documentation in R/locale.R
 \name{locale}
 \alias{locale}
-\title{Setting locale}
+\title{Set Aspects of the Locale for Transliteration}
 \usage{
 locale(loc)
 }
-\arguments{
-\item{loc}{string argument for sys.setlocale(), "L"-Serbian Latin locale,
-"C"-Serbian Cyrillic locale settings and
-"D"-for system default settings.}
-}
 \description{
-Setting locale
+Set Aspects of the Locale for Transliteration
 }

@@ -6,26 +6,6 @@
 \usage{
 cyr_lat(df)
 }
-\arguments{
-\item{df}{can be a data frame, tibble or character string}
-}
-\value{
-data frame, tibble or character string converted to Serbian Latin characters
-}
 \description{
-Converting Serbian Cyrillic characters to Serbian Latin characters.
-The function, changes locale settings of R session to Serbian Latin
-for easier manipulation with Serbian Latin character sets.
-When this function converts data frame or tibble function does not
-change the characters of column names. In the future it is planed to
-add this option.
-}
-\examples{
-\dontrun{
-cyr_lat(c("Ð§", "Ñ™", "Ñ’", "Ð¶", "Ñ›", "Ñš"))
-
-df_text <- data.frame(num = 1:6, c("Ð§", "Ñ™", "Ñ’", "Ð¶", "Ñ›", "Ñš"),
-stringsAsFactors = FALSE)
-cyr_lat(df_text)
-}
+Serbian Cyrillic to Serbian Latin transliterator
 }
