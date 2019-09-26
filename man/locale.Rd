@@ -7,8 +7,9 @@
 locale(loc)
 }
 \arguments{
-\item{loc}{string argument for sys.setlocale(), L-Serbian Latin locale,
-C-Serbian Cyrillic locale settings and D-for system default settings.}
+\item{loc}{string argument for sys.setlocale(), "L"-Serbian Latin locale,
+"C"-Serbian Cyrillic locale settings and
+"D"-for system default settings.}
 }
 \description{
 Setting locale

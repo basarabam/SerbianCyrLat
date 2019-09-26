@@ -59,7 +59,7 @@ lat_cyr <- function(df) {
         }
       }
     }
-  #Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
+  Sys.setlocale("LC_ALL", "Serbian (Cyrillic)_Serbia")
   warning("Locale settings changed!")
   print(Sys.getlocale())
   df
@@ -105,7 +105,7 @@ cyr_lat <- function(df) {
       }
     }
   }
-  #Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
+  Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
   warning("Locale settings changed!")
   print(Sys.getlocale())
   df
