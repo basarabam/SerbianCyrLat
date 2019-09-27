@@ -1,7 +1,7 @@
 ---
 output:
   pdf_document: 
-    latex_engine: xelatex
+    latex_engine: lualatex
   html_document: default
 ---
 # SerbianCyrLat
@@ -17,7 +17,7 @@ Description: The package converts Serbian latin characters to Serbian
   
   **It is important to use lcl() function to convert locale settings
   to locale from which you are transliterating! 
-  
+  лччћшђ
   Look at the function help file and example section ** 
   
 This package is in the development phase.

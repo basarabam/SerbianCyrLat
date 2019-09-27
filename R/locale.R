@@ -19,17 +19,6 @@
 #' If locale not set, before entering, transliteration may not be
 #' done properly, and strange behaviour of characters may occur.
 #' @return A character string of length one describing the locale in use
-#' @encoding UTF-8
-#' @examples
-#' \dontrun{
-#' lcl(loc = "L") #Important!
-#' lat_cyr(c("Č", "ž", "đ", "lj", "ć", "dž"))
-#'
-#' lcl(loc = "L") #Important!
-#' df_text <- data.frame(num = 1:6, text = c("Č", "ž", "đ", "lj", "ć", "dž"),
-#' stringsAsFactors = FALSE)
-#' lat_cyr(df_text)
-#' }
 #' @rdname lcl
 #' @export lcl
 lcl <- function(loc){
