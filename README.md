@@ -5,6 +5,8 @@ output:
   html_document: default
 ---
 # SerbianCyrLat
+[![Build Status](https://travis-ci.org/basarabam/SerbianCyrLat.svg?branch=master)](https://travis-ci.org/basarabam/SerbianCyrLat)
+
 This is the git repository of the R package for converting Serbian Latin characters to Serbian Cyrillic and vice versa 
 
 The plan is to develop easy way of converting Serbian Latin to Serbian Cyrillic characters.
