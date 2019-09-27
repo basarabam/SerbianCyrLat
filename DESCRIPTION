@@ -11,7 +11,7 @@ Description: The package converts Serbian latin characters to Serbian
   of conversion as to choose to clone character changes in new variable 
   or to change charactersin place. It is possible to convert strings in 
   character variables and dataframes.
-  It is important to use lcl() function before transliterating. 
+  It is important to use lcl() function before transliterating.
   Look at the examples for detail use of transliterating.
 Encoding: UTF-8
 Imports: 
