@@ -1,3 +1,9 @@
+---
+output:
+  pdf_document: 
+    latex_engine: xelatex
+  html_document: default
+---
 # SerbianCyrLat
 This is the git repository of the R package for converting Serbian Latin characters to Serbian Cyrillic and vice versa 
 
