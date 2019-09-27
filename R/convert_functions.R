@@ -28,13 +28,14 @@ myenv$test_cir_lat <- function(df){
 #'
 #' @param df can be a data frame, tibble or character string
 #' @return data frame, tibble or character string converted to Serbian Cyrillic characters.
+#' @encoding UTF-8
 #' @examples
 #' \dontrun{
-#' locale(loc = "L") #Important!
+#' lcl(loc = "L")
 #' lat_cyr(c("Č", "ž", "đ", "lj", "ć", "dž"))
 #'
-#' locale(loc = "L") #Important!
-#' df_text <- data.frame(num = 1:6, c("Č", "ž", "đ", "lj", "ć", "dž"),
+#' lcl(loc = "L")
+#' df_text <- data.frame(num = 1:6, text = c("Č", "ž", "đ", "lj", "ć", "dž"),
 #' stringsAsFactors = FALSE)
 #' lat_cyr(df_text)
 #' }
@@ -74,13 +75,14 @@ lat_cyr <- function(df) {
 #'
 #' @param df can be a data frame, tibble or character string
 #' @return data frame, tibble or character string converted to Serbian Latin characters
+#' @encoding UTF-8
 #' @examples
 #' \dontrun{
-#' locale(loc = "C") #Important!
+#' lcl(loc = "C")
 #' cyr_lat(c("Ч", "љ", "ђ", "ж", "ћ", "њ"))
 #'
-#' locale(loc = "C") #Important!
-#' df_text <- data.frame(num = 1:6, c("Ч", "љ", "ђ", "ж", "ћ", "њ"),
+#' lcl(loc = "C")
+#' df_text <- data.frame(num = 1:6, text = c("Ч", "љ", "ђ", "ж", "ћ", "њ"),
 #' stringsAsFactors = FALSE)
 #' cyr_lat(df_text)
 #' }

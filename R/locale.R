@@ -15,23 +15,24 @@
 #' locale(loc = "L"). If not, strange behaviour of characters, may occur.
 #' If transliteration is done from the Serbian Cyrillic to Serbian
 #' Latin it is important to set loacale to Serbian Cyrillic,
-#' locale(loc="C").
+#' lcl(loc="C").
 #' If locale not set, before entering, transliteration may not be
 #' done properly, and strange behaviour of characters may occur.
 #' @return A character string of length one describing the locale in use
+#' @encoding UTF-8
 #' @examples
 #' \dontrun{
-#' locale(loc = "L") #Important!
+#' lcl(loc = "L") #Important!
 #' lat_cyr(c("Č", "ž", "đ", "lj", "ć", "dž"))
 #'
-#' locale(loc = "L") #Important!
-#' df_text <- data.frame(num = 1:6, c("Č", "ž", "đ", "lj", "ć", "dž"),
+#' lcl(loc = "L") #Important!
+#' df_text <- data.frame(num = 1:6, text = c("Č", "ž", "đ", "lj", "ć", "dž"),
 #' stringsAsFactors = FALSE)
 #' lat_cyr(df_text)
 #' }
-#' @rdname locale
-#' @export locale
-locale <- function(loc){
+#' @rdname lcl
+#' @export lcl
+lcl <- function(loc){
   if(loc == "L"){
     Sys.setlocale("LC_ALL", "Serbian (Latin)_Serbia")
   } else if(loc == "C"){

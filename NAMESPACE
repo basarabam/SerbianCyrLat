@@ -2,4 +2,4 @@
 
 export(cyr_lat)
 export(lat_cyr)
-export(locale)
+export(lcl)
