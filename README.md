@@ -12,6 +12,6 @@ Description: The package converts Serbian latin characters to Serbian
   **It is important to use lcl() function to convert locale settings
   to locale from which you are transliterating! 
   
-  Look at the function help file and example section** 
+  Look at the function help file and example section ** 
   
 This package is in the development phase.
