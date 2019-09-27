@@ -9,7 +9,9 @@ Description: The package converts Serbian latin characters to Serbian
   or to change charactersin place. It is possible to convert strings in 
   character variables and dataframes. 
   
-  **It is important to use lcl function to convert locale settings
-  to locale from which you are transliterating!** 
+  **It is important to use lcl() function to convert locale settings
+  to locale from which you are transliterating! 
+  
+  Look at the function help file and example section** 
   
 This package is in the development phase.
